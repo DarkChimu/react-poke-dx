@@ -80,8 +80,8 @@ const Main = () => {
 
 
     return (
-        <div style={{ backgroundColor: darkMode ? 'white': '#121212', minHeight: '100vh'}}>
-            <ThemeProvider theme={darkMode ? lightTheme : darkTheme}>
+        <div style={{ backgroundColor: !darkMode ? 'white': '#121212', minHeight: '100vh'}}>
+            <ThemeProvider theme={!darkMode ? lightTheme : darkTheme}>
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="static">
                     <Toolbar>
@@ -163,12 +163,12 @@ const Main = () => {
                         </Typography>
                     </div>
                     :
-                    <Grid container spacing={2}>
+                    <Grid container spacing={2} style={{ marginTop: 15 }}>
                         {pokemons.map((pokemon, index) => (
                             <Grid item xs={6} key={index}>
                                 <Box
                                     sx={{
-                                        p: 2,
+                                        p: 1,
                                         bgcolor: 'background.default',
                                         display: 'grid',
                                         gridTemplateColumns: { md: '1fr 1fr' },
