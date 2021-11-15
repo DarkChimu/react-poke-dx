@@ -135,6 +135,7 @@ const Main = () => {
                         label="Buscar"
                         variant="outlined"
                         onChange={handleChange}
+                        value={search}
                     />
                     {loading ?
                         <div style={{ marginTop: 50, textAlign: 'center' }}>
