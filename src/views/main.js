@@ -135,7 +135,6 @@ const Main = () => {
                         label="Buscar"
                         variant="outlined"
                         onChange={handleChange}
-                        clearable
                     />
                     {loading ?
                         <div style={{ marginTop: 50, textAlign: 'center' }}>
