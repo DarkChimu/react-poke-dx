@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import PokeDetails from '../components/PokeDetails'
 import Typography from '@mui/material/Typography'
 import TextField from '@mui/material/TextField'
 import Grid from '@mui/material/Grid'
@@ -8,7 +9,6 @@ import Paper from '@mui/material/Paper'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import IconButton from '@mui/material/IconButton'
-import MenuIcon from '@mui/icons-material/Menu'
 import CircularProgress from '@mui/material/CircularProgress'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import UpdateIcon from '@mui/icons-material/Update'
@@ -143,36 +143,7 @@ const Main = () => {
                         </div>
                         :
                         search !== '' ?
-                            <div style={{ marginTop: 10, textAlign: 'center' }}>
-                                <img src={queriedPokemon.imgJuego} alt={queriedPokemon.nombre} />
-                                <Typography sx={{ fontSize: 20 }} color="text.secondary">
-                                    {queriedPokemon.nombre}
-                                </Typography>
-                                <Typography sx={{ fontSize: 20 }} color="text.secondary">
-                                    Tipos: {queriedPokemon.tipos}
-                                </Typography>
-                                <Typography sx={{ fontSize: 20 }} color="text.secondary">
-                                    Experiencia: {queriedPokemon.experiencia}
-                                </Typography>
-                                <Typography sx={{ fontSize: 20 }} color="text.secondary">
-                                    HP: {queriedPokemon.hp}
-                                </Typography>
-                                <Typography sx={{ fontSize: 20 }} color="text.secondary">
-                                    Ataque: {queriedPokemon.ataque}
-                                </Typography>
-                                <Typography sx={{ fontSize: 20 }} color="text.secondary">
-                                    Defensa: {queriedPokemon.defensa}
-                                </Typography>
-                                <Typography sx={{ fontSize: 20 }} color="text.secondary">
-                                    Ataque Especial: {queriedPokemon.especial}
-                                </Typography>
-                                <Typography sx={{ fontSize: 20 }} color="text.secondary">
-                                    Defensa Especial: {queriedPokemon.defensaEspecial}
-                                </Typography>
-                                <Typography sx={{ fontSize: 20 }} color="text.secondary">
-                                    Velocidad: {queriedPokemon.velocidad}
-                                </Typography>
-                            </div>
+                            <PokeDetails pokemon={queriedPokemon} />
                             :
                             <Grid container spacing={2} style={{ marginTop: 15 }}>
                                 {pokemons.map((pokemon, index) => (
